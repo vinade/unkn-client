@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 import App from './App';
 
 function getRoomID(): string {
-  let uid = document.location.pathname.split('/')[1];
+  let uid = document.location.href.split('#')[1];
 
   if (!uid) {
     uid = uuidv4();
-    document.location.href = `/${uid}`;
+    document.location.href = `#${uid}`;
   }
 
   return uid;
